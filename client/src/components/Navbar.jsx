@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth-context";
+
 const Navbar = () => {
+  const auth = useContext(AuthContext)
   return (
     <>
     <div className="flex justify-between navbar bg-base-300 w-full">
@@ -17,13 +21,13 @@ const Navbar = () => {
             <ThemeToggle />
           </li>
           <li>
-            <Link to={'/add-course'} className="text-lg">Add new course </Link>
+            {!auth.islogged && <Link to={'/add-course'} className="text-lg">Add new course </Link>}
           </li>
           <li>
-            <Link to={'/login'} className="text-lg"> Login </Link>
+            {!auth.islogged ? <NavLink to={'/login'} className="text-lg"> Login </NavLink> : <NavLink to={'/'} className="text-lg"> Logout </NavLink>}
           </li>
           <li>
-            <Link to={'/register'} className="text-lg text-italic"> Register </Link>
+            {!auth.islogged && <Link to={'/register'} className="text-lg text-italic"> Register </Link>}
           </li>
         </ul>
       </div>

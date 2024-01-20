@@ -29,8 +29,7 @@ const Form = () => {
     }
     const { courseId, ...otherProps } = data;
     
-    const canSave = [...Object.values(otherProps)].every(Boolean)
-
+    const canSave = data.courseId === "" || data.courseInstructor=== "" || data.courseName===""
     return (  
         <div className="flex flex-col justify-normal gap-10">
         <h2 className="text-3xl text-white text-left my-10">Add your course here </h2>
@@ -38,7 +37,7 @@ const Form = () => {
           
       <NewCourse data={data} handleChange={handleChange}/>
 
-      <button type='submit' disabled={!canSave} className="btn join-item rounded-full mt-10"  >
+      <button type='submit' disabled={canSave} className="btn join-item rounded-full mt-10"  >
        Add this course
     </button>
         </form>

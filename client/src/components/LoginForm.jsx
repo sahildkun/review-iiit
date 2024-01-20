@@ -11,7 +11,7 @@ const LoginForm = () => {
                     <label className="label">
                         <span className="text-base label-text">Email</span>
                     </label>
-                    <input type="text" placeholder="Email Address" className="w-full input input-bordered input-primary" required/>
+                    <input type="email" placeholder="Email Address" className="w-full input input-bordered input-primary" required/>
                 </div>
                 <div>
                     <label className="label">

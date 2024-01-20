@@ -17,6 +17,8 @@ import LoginForm from './components/LoginForm'
 import Form from './components/Form'
 import Loader from './components/Loader'
 import NewCourse from './components/createNewCourse'
+import { AuthContext } from './context/auth-context'
+import { useCallback } from 'react'
 
 
 // fetch('/api/v1/test').then( (res) => res.json()).then((data) => console.log(data));
@@ -70,8 +72,16 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+
+  const [islogged, setIslogged] = useState(true);
+  const logIn = useCallback (() => {setIslogged(true)},[])
+  const logOut = useCallback (() => {setIslogged(false)},[])
+
+
   return (
+    <AuthContext.Provider value={{islogged: islogged, logIn:logIn,logOut:logOut} } >
      <RouterProvider  router={router}/>
+     </AuthContext.Provider>
     )
 }
 

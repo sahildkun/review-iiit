@@ -27,7 +27,7 @@ const Form = () => {
             [name]: value
         }))
     }
-    const { courseId, ...otherProps } = data;
+    
     
     const canSave = data.courseId === "" || data.courseInstructor=== "" || data.courseName===""
     return (  

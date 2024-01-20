@@ -17,6 +17,9 @@ import LoginForm from './components/LoginForm'
 import Form from './components/Form'
 import Loader from './components/Loader'
 import NewCourse from './components/createNewCourse'
+
+import Navbar2 from './components/Navbar2'
+
 import { AuthContext } from './context/auth-context'
 import { useCallback } from 'react'
 
@@ -26,7 +29,7 @@ import { useCallback } from 'react'
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<Navbar/>,
+    element:<Navbar2/>,
     children: [  
       {
         index: true,
@@ -73,7 +76,7 @@ const router = createBrowserRouter([
 
 function App() {
 
-  const [islogged, setIslogged] = useState(true);
+  const [islogged, setIslogged] = useState();
   const logIn = useCallback (() => {setIslogged(true)},[])
   const logOut = useCallback (() => {setIslogged(false)},[])
 

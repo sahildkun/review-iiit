@@ -20,7 +20,7 @@ const AutocompleteComponent = () => {
         list="datalistOptions"
         onChange={handleInputChange}
       />
-      <datalist  id="datalistOptions">
+      <datalist id="datalistOptions">
         {Object.entries(jsonData).map(([code, { title, instructors }]) => (
           <option key={code} value={`${code} - ${title}`} />
         ))}

@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
     <div className="flex justify-between navbar bg-base-300 w-full">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl"> <NavLink to={'/'} className="text-xl text-italic"> review-iiit </NavLink>
+        <a className="btn btn-ghost text-xl"> <NavLink to={'/'} className="text-xl text-italic"> Review-iiit </NavLink>
         </a>
       </div>
       <div className="flex-none">

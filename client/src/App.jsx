@@ -17,14 +17,14 @@ import LoginForm from './components/LoginForm'
 import Form from './components/Form'
 import Loader from './components/Loader'
 import NewCourse from './components/createNewCourse'
-
+import Navbar2 from './components/Navbar2'
 
 // fetch('/api/v1/test').then( (res) => res.json()).then((data) => console.log(data));
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<Navbar/>,
+    element:<Navbar2/>,
     children: [  
       {
         index: true,

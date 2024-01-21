@@ -11,7 +11,7 @@ const Navbar2 = () => {
   return (
     <>
       <header>
-        <div className="navbar bg-white shadow-md px-3 rounded">
+        <div className="navbar bg-white shadow-xl px-3 rounded">
           <div className="navbar-start">
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,9 +76,14 @@ const Navbar2 = () => {
                   Register
                 </Link>
               ) : (
-                <NavLink to={'/'} className="btn mr-8 text-white">
-                  Logout
-                </NavLink>
+                <>
+                  <NavLink to={'/'} className="btn mr-8 text-white">
+                    Logout
+                  </NavLink>
+                  <NavLink to={'/add-course'} className="btn mr-8 text-white">
+                    Add New Courses
+                  </NavLink>
+                </>
               )}
             </div>
             <div>
@@ -88,6 +93,7 @@ const Navbar2 = () => {
                 </NavLink>
               ) : null}
             </div>
+
           </div>
         </div>
       </header>

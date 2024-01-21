@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element:(
-          <div className='flex flex-col'>
+          <div className='flex flex-col h-96'>
     
             <AutocompleteComponent/>
     

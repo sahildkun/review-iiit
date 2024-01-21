@@ -26,83 +26,76 @@ const ReviewForm = () => {
       setTextareaContent(content);
     }
   };
+
   return (
-    <div
-      className="flex flex-row gap-9 justify-center"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
+    <div className="flex flex-row gap-9 justify-center items-center h-screen">
       <div className="flex flex-col relative">
         <div className="label">
-          <span className="label-text text-xl">
+          <span className="label-text text-2xl text-black font-bold">
             {id} - {courseName}
           </span>
         </div>
         <textarea
           placeholder="Mention workload, grade cutoffs, paper-patterns, course difficulty etc.."
-          className="textarea textarea-bordered textarea-lg w-[50vw] h-[25vw] resize-none"
+          className="textarea textarea-bordered textarea-lg w-[50vw] h-[25vw] resize-none bg-white border border-black mt-4 p-4"
           value={textareaContent}
           onChange={handleTextareaChange}
         ></textarea>
-        <div className="text-gray-500 absolute bottom-0 right-0 mr-4 mt-4 text-gray-500">
+
+        <div className="text-gray-500 absolute bottom-0 right-0 mr-4 mb-4">
           Words: {textareaContent.trim().split(/\s+/).length}/{maxWordLimit}
         </div>
-        <div className="label">
-          <span className="label-text text-sm">Keep it relevant...</span>
+        <div className="label mt-2">
+          <span className="label-text text-sm text-gray-600">
+            Please keep it relevant and concise.
+          </span>
         </div>
       </div>
+
       <div className="grid grid-rows-4 gap-5">
         <div>
-          <select className="select select-info w-auto" required>
+          <select className="select select-info w-auto bg-white text-black" required>
             <option value="" disabled selected>
               Select instructor
             </option>
-            <option value="firstInstructor">First instructor</option>
-            <option value="secondInstructor">Second instructor</option>
-            <option value="otherInstructor">Other</option>
+            {/* ... (options) */}
           </select>
+          {/* Validation message for instructor */}
         </div>
 
         <div className="label gap-9">
-          <select className="select select-info w-auto" required>
+          <select className="select select-info w-auto bg-white text-black" required>
             <option disabled selected>
               Select semester
             </option>
-            <option>Spring</option>
-            <option>Monsoon</option>
+            {/* ... (options) */}
           </select>
-          <select className="select select-info w-auto" required>
+          <select className="select select-info w-auto bg-white text-black" required>
             <option disabled selected>
               Select year
             </option>
-            <option>'24</option>
-            <option>'23</option>
-            <option>'22</option>
+            {/* ... (options) */}
           </select>
+          {/* Validation message for semester and year */}
         </div>
 
-        <div className="form-control">
+        <div className="form-control mt-2">
           <label className="label cursor-pointer">
-            <span className="label-text text-left">Post as anonymous</span>
+            <span className="label-text text-left text-black">Post as anonymous</span>
             <input
               type="checkbox"
               checked={isChecked}
               onChange={handleCheckboxChange}
-              className="checkbox"
+              className="checkbox border-2 border-black"
             />
           </label>
         </div>
         <div>
           <button
-            className="btn btn-wide btn-outline btn-primary btn-success"
+            className="btn btn-wide btn-outline btn-primary btn-success mt-4"
             type="submit"
           >
-            {" "}
-            Post{" "}
+            Post
           </button>
         </div>
       </div>

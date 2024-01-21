@@ -5,7 +5,7 @@ import Rain from './Rain'
 
 const Post = () => {
     return (
-        <div className="flex flex-col w-3/4 min-w-[75%] bg-black border border-gray-200 p-4 rounded-md shadow-md overflow-x-auto">
+        <div className="flex flex-col w-full min-w-[75%] bg-black border border-gray-200 p-4 rounded-md shadow-md overflow-x-auto">
             <div className='grid grid-cols-3 w-full'>
                 <div className="col-span-2 flex items-center">
                     <div className="flex items-center">

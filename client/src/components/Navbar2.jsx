@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { Outlet } from "react-router-dom";
 import { useContext } from "react";
@@ -50,9 +50,9 @@ const Navbar2 = () => {
               <img
                 src="https://upload.wikimedia.org/wikipedia/en/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png"
                 alt="IIITH Logo"
-                className="w-40 h-auto"
-              />
+                className="w-40 h-auto mr-5"></img>
             </Link>
+            <h1 className="font-serif text-blue-900">Review Portal</h1>
           </div>
           {/* <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -71,10 +71,22 @@ const Navbar2 = () => {
           </div> */}
           <div className="navbar-end">
             <div>
-              <a className="btn mr-3 text-white">Register</a>
+              {!auth.islogged ? (
+                <Link to={'/register'} className="btn mr-8 text-white">
+                  Register
+                </Link>
+              ) : (
+                <NavLink to={'/'} className="btn mr-8 text-white">
+                  Logout
+                </NavLink>
+              )}
             </div>
             <div>
-              <a className="btn text-white">Log In</a>
+              {!auth.islogged ? (
+                <NavLink to={'/login'} className="btn mr-3 text-white">
+                  Log In
+                </NavLink>
+              ) : null}
             </div>
           </div>
         </div>
